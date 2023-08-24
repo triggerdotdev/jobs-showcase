@@ -5,12 +5,12 @@ This repo contains a set of jobs that can be run locally using the `trigger-cli`
 - **Cron scheduled basic** - A scheduled Job which runs at 2:30pm every Monday.
 - **Scheduled interval basic** - Runs every 60 seconds, starting 60 seconds after this Job is first indexed.
 - **Delay example jokes** - Logs a message to the console, waits for 5 minutes, and then logs another message.
-- **GitHub: issue reminder** - Sends a Slack message to a channel if a GitHub issue is left open for 24 hours
-- **GitHub: new issue opened** - Runs when a new issue is opened on a repo you have admin rights to, once created, it will add a 'Bug' label to the issue
-- **OpenAI: generate image:** Generate an image from a prompt, using OpenAI
-- **OpenAI: tell me a joke:** Generate a joke from a prompt, using OpenAI
-- **Resend: send basic email** - Sends a basic email using Resend
-- **Slack: post message** - Posts a message to a Slack channel
+- **GitHub: issue reminder** - Sends a Slack message to a channel if a GitHub issue is left open for 24 hours.
+- **GitHub: new issue opened** - Runs when a new issue is opened on a repo you have admin rights to, once created, it will add a 'Bug' label to the issue.
+- **OpenAI: generate image:** Generate an image from a prompt, using OpenAI.
+- **OpenAI: tell me a joke:** Generate a joke from a prompt, using OpenAI.
+- **Resend: send basic email** - Sends a basic email using Resend.
+- **Slack: post message** - Posts a message to a Slack channel.
 
 ## Setup
 
