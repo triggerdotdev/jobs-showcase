@@ -9,11 +9,11 @@
     "githubissuereminder": "node -r dotenv/config -r ts-node/register src/gitHubIssueReminder.ts",
     "githubnewissueopened": "node -r dotenv/config -r ts-node/register src/gitHubNewIssueOpened.ts",
     "githubnewstartoslack": "node -r dotenv/config -r ts-node/register src/gitHubNewStarToSlack.ts",
-    "openaigenerateimage": "node -r dotenv/config -r ts-node/register src/openAiGenerateImage.ts",
-    "openaitellmeajoke": "node -r dotenv/config -r ts-node/register src/openAiTellMeAJoke.ts",
+    "openaigenerateimage": "node -r dotenv/config -r ts-node/register src/openAIGenerateImage.ts",
+    "openaitellmeajoke": "node -r dotenv/config -r ts-node/register src/openAITellMeAJoke.ts",
     "resendsendbasicemail": "node -r dotenv/config -r ts-node/register src/resendSendBasicEmail.ts",
     "scheduledintervalbasic": "node -r dotenv/config -r ts-node/register src/scheduledIntervalBasic.ts",
-    "slackPostMessage": "node -r dotenv/config -r ts-node/register src/slackPostMessage.ts",
+    "slackpostmessage": "node -r dotenv/config -r ts-node/register src/slackPostMessage.ts",
     "dev:trigger": "trigger-cli dev --port 8080"
   },
   "dependencies": {

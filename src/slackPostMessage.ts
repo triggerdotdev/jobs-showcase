@@ -1,5 +1,6 @@
 import { TriggerClient, eventTrigger } from "@trigger.dev/sdk";
 import { Slack } from "@trigger.dev/slack";
+import { z } from "zod";
 
 const client = new TriggerClient({ id: "jobs-showcase" });
 
@@ -30,5 +31,4 @@ client.defineJob({
 
 // These lines can be removed if you don't want to use express
 import { createExpressServer } from "@trigger.dev/express";
-import { z } from "zod";
 createExpressServer(client);

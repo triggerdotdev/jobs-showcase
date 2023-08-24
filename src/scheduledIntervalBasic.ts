@@ -1,4 +1,4 @@
-import { TriggerClient, cronTrigger, intervalTrigger } from "@trigger.dev/sdk";
+import { TriggerClient, intervalTrigger } from "@trigger.dev/sdk";
 
 const client = new TriggerClient({ id: "jobs-showcase" });
 

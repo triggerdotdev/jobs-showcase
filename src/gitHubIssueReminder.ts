@@ -8,7 +8,7 @@ const github = new Github({ id: "github" });
 const slack = new Slack({ id: "slack" });
 
 client.defineJob({
-  id: "new-github-issue-reminder",
+  id: "github-new-issue-reminder",
   name: "GitHub: new issue reminder",
   version: "1.0.0",
   trigger: github.triggers.repo({
@@ -46,3 +46,7 @@ client.defineJob({
     }
   },
 });
+
+// These lines can be removed if you don't want to use express
+import { createExpressServer } from "@trigger.dev/express";
+createExpressServer(client);
