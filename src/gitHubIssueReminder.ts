@@ -7,6 +7,7 @@ const client = new TriggerClient({ id: "jobs-showcase" });
 const github = new Github({ id: "github" });
 const slack = new Slack({ id: "slack" });
 
+// Sends a Slack message to a channel if a GitHub issue is left open for 24 hours
 client.defineJob({
   id: "github-new-issue-reminder",
   name: "GitHub: new issue reminder",
