@@ -1,19 +1,16 @@
 import { TriggerClient, eventTrigger } from "@trigger.dev/sdk";
-import { createExpressServer } from "@trigger.dev/express";
 import { z } from "zod";
 import { Stripe } from "@trigger.dev/stripe";
 
 export const client = new TriggerClient({
-  id: "job-catalog",
-  apiKey: process.env["TRIGGER_API_KEY"],
-  apiUrl: process.env["TRIGGER_API_URL"],
-  verbose: false,
-  ioLogLocalEnabled: true,
+  id: "jobs-showcase",
+  apiKey: process.env.TRIGGER_API_KEY,
+  apiUrl: process.env.TRIGGER_API_URL,
 });
 
 const stripe = new Stripe({
   id: "stripe",
-  apiKey: process.env["STRIPE_API_KEY"]!,
+  apiKey: process.env.STRIPE_API_KEY!,
 });
 
 client.defineJob({
@@ -181,4 +178,6 @@ client.defineJob({
   },
 });
 
+// These lines can be removed if you don't want to use express
+import { createExpressServer } from "@trigger.dev/express";
 createExpressServer(client);
