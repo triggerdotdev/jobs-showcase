@@ -1,0 +1,7 @@
+{
+  "include": ["./src/**/*.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["DOM", "DOM.Iterable"]
+  }
+}
