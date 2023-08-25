@@ -1,6 +1,6 @@
 # Jobs Showcase
 
-This repo contains a set of jobs that can be run locally using the `trigger-cli` and `@trigger.dev/express` packages. The jobs included in this repo are:
+This repo contains a set of jobs that can be run locally using the `@trigger.dev/cli` and `@trigger.dev/express` packages. The jobs included in this repo are:
 
 - **Cron scheduled basic** - A scheduled Job which runs at 2:30pm every Monday.
 - **Scheduled interval basic** - Runs every 60 seconds, starting 60 seconds after this Job is first indexed.
@@ -24,7 +24,7 @@ Each file in `src` is either a Job or a separate set of jobs that can be run sep
 npm run cronscheduledbasic
 ```
 
-This will open up a local server using `express` on port 8080. Then in a <u>separate terminal window</u> you can run the trigger-cli dev command:
+This will open up a local server using `express` on port 8080. Then in a <u>separate terminal window</u> you can run the `@trigger.dev/cli dev` command:
 
 ```sh
 npm run dev:trigger
