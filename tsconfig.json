@@ -12,5 +12,7 @@
   },
   "compilerOptions": {
     // typescript options here
-  }
+    "jsx": "preserve"
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
 }
