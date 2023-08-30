@@ -6,7 +6,7 @@ export const client = new TriggerClient({ id: "jobs-showcase" });
 
 const sendgrid = new SendGrid({
   id: "sendgrid",
-  apiKey: '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',
+  apiKey: process.env.SENDGRID_API_KEY!,
 });
 
 
