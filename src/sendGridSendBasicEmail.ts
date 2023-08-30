@@ -11,8 +11,8 @@ const sendgrid = new SendGrid({
 
 // This job sends a basic email to a 'to' email address, a 'subject', a 'text' field and a 'from' email address.
 client.defineJob({
-  id: "send-sendgrid-email",
-  name: "Send SendGrid Email",
+  id: "sendgrid-send-basic-email",
+  name: "SendGrid: send basic email",
   version: "1.0.0",
   trigger: eventTrigger({
     name: "send.email",
