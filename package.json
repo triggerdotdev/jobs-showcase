@@ -16,6 +16,7 @@
     "scheduled-interval-basic": "node -r dotenv/config -r ts-node/register src/scheduledIntervalBasic.ts",
     "sendgrid-send-basic-email": "node -r dotenv/config -r ts-node/register src/sendGridEmail.ts",
     "slack-post-message": "node -r dotenv/config -r ts-node/register src/slackPostMessage.ts",
+    "stripe-on-subscription-created": "node -r dotenv/config -r ts-node/register src/stripeOnSubscriptionCreated.ts",
     "supabase-stripe-update-database": "node -r dotenv/config -r ts-node/register src/supabaseStripeUpdateDatabase.ts",
     "dev:trigger": "trigger-cli dev --port 8080"
   },
