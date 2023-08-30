@@ -28,8 +28,6 @@ client.defineJob({
       model: "gpt-3.5-turbo",
     });
 
-    const models = await io.openai.listModels("list-models");
-
     const jokeResult = await io.openai.backgroundCreateChatCompletion(
       "background-chat-completion",
       {
