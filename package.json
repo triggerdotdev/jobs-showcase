@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "email dev",
+    "tsc:email": "tsc --jsx react ./src/resendSendReactEmail",
     "stripe": "node -r dotenv/config -r ts-node/register src/stripe.ts",
     "cron-scheduled-basic": "node -r dotenv/config -r ts-node/register src/cronScheduledBasic.ts",
     "delay-example-joke": "node -r dotenv/config -r ts-node/register src/delayExampleJoke.ts",
@@ -18,9 +19,18 @@
     "slack-post-message": "node -r dotenv/config -r ts-node/register src/slackPostMessage.ts",
     "stripe-on-subscription-created": "node -r dotenv/config -r ts-node/register src/stripeOnSubscriptionCreated.ts",
     "supabase-stripe-update-database": "node -r dotenv/config -r ts-node/register src/supabaseStripeUpdateDatabase.ts",
+    "resend-send-react-email": "npm run tsc:email ; node -r dotenv/config src/resendSendReactEmail.js",
     "dev:trigger": "trigger-cli dev --port 8080"
   },
   "dependencies": {
+    "@react-email/button": "^0.0.10",
+    "@react-email/container": "^0.0.8",
+    "@react-email/head": "^0.0.5",
+    "@react-email/html": "^0.0.4",
+    "@react-email/preview": "^0.0.6",
+    "@react-email/render": "0.0.7",
+    "@react-email/section": "^0.0.9",
+    "@react-email/text": "^0.0.5",
     "@supabase/auth-helpers-nextjs": "^0.7.1",
     "@supabase/auth-ui-react": "^0.4.2",
     "@supabase/auth-ui-shared": "^0.1.6",
@@ -37,6 +47,7 @@
     "@trigger.dev/stripe": "^2.0.14",
     "@trigger.dev/supabase": "^2.0.14",
     "@trigger.dev/typeform": "^2.0.14",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "zod": "3.21.4"
   },
@@ -52,6 +63,6 @@
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   }
 }
