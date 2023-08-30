@@ -9,9 +9,8 @@ const sendgrid = new SendGrid({
   apiKey: process.env.SENDGRID_API_KEY!,
 });
 
-
 // This job sends a basic email to a 'to' email address, a 'subject', a 'text' field and a 'from' email address.
- client.defineJob({
+client.defineJob({
   id: "send-sendgrid-email",
   name: "Send SendGrid Email",
   version: "1.0.0",
@@ -29,9 +28,9 @@ const sendgrid = new SendGrid({
     sendgrid,
   },
   run: async (payload, io, ctx) => {
-    await io.sendgrid.sendEmail("send-email",{
+    await io.sendgrid.sendEmail("send-email", {
       to: payload.to,
-      from: "Trigger.dev <hello@email.trigger.dev>",
+      from: payload.from,
       subject: payload.subject,
       text: payload.text,
     });
@@ -41,7 +40,3 @@ const sendgrid = new SendGrid({
 // These lines can be removed if you don't want to use express
 import { createExpressServer } from "@trigger.dev/express";
 createExpressServer(client);
-
-
-
-
