@@ -12,7 +12,8 @@
   },
   "compilerOptions": {
     // typescript options here
-    "jsx": "preserve"
+    "jsx": "react-jsx",
+    "moduleResolution": "NodeNext"
   },
   "include": ["**/*.ts", "**/*.tsx"]
 }
