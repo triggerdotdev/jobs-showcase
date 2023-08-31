@@ -52,5 +52,3 @@ apps/**/public/build
 /test-results/
 /playwright-report/
 /playwright/.cache/
-
-src/resendSendReactEmail.js

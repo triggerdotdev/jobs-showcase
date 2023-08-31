@@ -5,7 +5,6 @@ import { Resend } from "@trigger.dev/resend";
 import { z } from "zod";
 
 // react-email imports
-import * as React from "react";
 import { Html } from "@react-email/html";
 import { Head } from "@react-email/head";
 import { Text } from "@react-email/text";

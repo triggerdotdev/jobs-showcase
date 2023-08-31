@@ -19,7 +19,7 @@
     "slack-post-message": "node -r dotenv/config -r ts-node/register src/slackPostMessage.ts",
     "stripe-on-subscription-created": "node -r dotenv/config -r ts-node/register src/stripeOnSubscriptionCreated.ts",
     "supabase-stripe-update-database": "node -r dotenv/config -r ts-node/register src/supabaseStripeUpdateDatabase.ts",
-    "resend-send-react-email": "npm run tsc:email ; node -r dotenv/config src/resendSendReactEmail.js",
+    "resend-send-react-email": "node -r dotenv/config -r ts-node/register src/resendSendReactEmail.tsx",
     "dev:trigger": "trigger-cli dev --port 8080"
   },
   "dependencies": {
