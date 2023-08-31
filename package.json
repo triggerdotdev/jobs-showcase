@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "email dev",
-    "tsc:email": "tsc --jsx react ./src/resendSendReactEmail",
     "stripe": "node -r dotenv/config -r ts-node/register src/stripe.ts",
     "cron-scheduled-basic": "node -r dotenv/config -r ts-node/register src/cronScheduledBasic.ts",
     "delay-example-joke": "node -r dotenv/config -r ts-node/register src/delayExampleJoke.ts",
