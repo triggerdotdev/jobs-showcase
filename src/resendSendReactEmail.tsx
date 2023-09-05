@@ -69,7 +69,7 @@ function BasicEmail({ name, text }: { name: string; text: string }) {
   );
 }
 
-// This job sends a basic email to a 'to' email address, a 'subject', a 'text' field and a 'from' email address.
+// This job sends a basic email built using React and Typescript
 client.defineJob({
   id: "resend-send-react-email",
   name: "Resend: send react email",
