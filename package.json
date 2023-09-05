@@ -19,6 +19,7 @@
     "stripe-on-subscription-created": "node -r dotenv/config -r ts-node/register src/stripeOnSubscriptionCreated.ts",
     "supabase-stripe-update-database": "node -r dotenv/config -r ts-node/register src/supabaseStripeUpdateDatabase.ts",
     "resend-send-react-email": "node -r dotenv/config -r ts-node/register src/resendSendReactEmail.tsx",
+    "weekly-user-activity-summary": "node -r dotenv/config -r ts-node/register src/weeklyUserActivitySummary.ts",
     "dev:trigger": "trigger-cli dev --port 8080"
   },
   "dependencies": {
