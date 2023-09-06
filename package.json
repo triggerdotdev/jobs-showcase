@@ -12,6 +12,7 @@
     "github-new-star-to-slack": "node -r dotenv/config -r ts-node/register src/gitHubNewStarToSlack.ts",
     "open-ai-generate-image": "node -r dotenv/config -r ts-node/register src/openAIGenerateImage.ts",
     "open-ai-tell-me-a-joke": "node -r dotenv/config -r ts-node/register src/openAITellMeAJoke.ts",
+    "plain-update-customer": "node -r dotenv/config -r ts-node/register src/plainUpdateCustomer.ts",
     "resend-send-basic-email": "node -r dotenv/config -r ts-node/register src/resendSendBasicEmail.ts",
     "scheduled-interval-basic": "node -r dotenv/config -r ts-node/register src/scheduledIntervalBasic.ts",
     "sendgrid-send-basic-email": "node -r dotenv/config -r ts-node/register src/sendGridEmail.ts",
