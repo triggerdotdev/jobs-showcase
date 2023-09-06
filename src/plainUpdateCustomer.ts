@@ -29,8 +29,7 @@ client.defineJob({
       identifier: {
         emailAddress: "rick.astley@gmail.com",
       },
-      // If customer isn't found and should be created
-      // then these details will be used:
+      // If customer isn't found they should be created
       onCreate: {
         email: {
           email: "rick.astley@gmail.com",
@@ -52,3 +51,7 @@ client.defineJob({
     });
   },
 });
+
+// These lines can be removed if you don't want to use express
+import { createExpressServer } from "@trigger.dev/express";
+createExpressServer(client);
