@@ -15,7 +15,7 @@ export const plain = new Plain({
 
 // This Job will use update a customer's information in Plain based on an identifier.
 client.defineJob({
-  id: "plain-date-customer",
+  id: "plain-update-customer",
   name: "Plain: update customer",
   version: "1.0.0",
   integrations: {
