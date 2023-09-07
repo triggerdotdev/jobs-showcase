@@ -18,7 +18,7 @@ const resend = new Resend({
 // This job sends a drip campaign using Resend
 client.defineJob({
   id: "resend-drip-campaign",
-  name: "Resend: drip campaign",
+  name: "Resend: email drip campaign",
   version: "1.0.0",
   trigger: eventTrigger({
     name: "send.drip.campaign",
@@ -83,7 +83,7 @@ client.defineJob({
       text: `This is the fourth email designed to re-engage your users after a month.`,
     };
 
-    // Email 3, triggered after 5 days
+    // Email 4, triggered after 30 days
     await io.resend.sendEmail("email-4", {
       to: payload.to,
       from: payload.from,
