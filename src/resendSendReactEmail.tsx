@@ -46,11 +46,12 @@ const text = {
 
 const button = {
   fontSize: "14px",
+  font: "bold",
   backgroundColor: "#28a745",
   color: "#fff",
   lineHeight: 1.5,
-  borderRadius: "0.5em",
-  padding: "0.75em 1.5em",
+  borderRadius: "0.2em",
+  textAlign: "center" as const,
 };
 
 function BasicEmail({ name, text }: { name: string; text: string }) {
@@ -62,7 +63,9 @@ function BasicEmail({ name, text }: { name: string; text: string }) {
         <Section style={section}>
           <Text>Hey {name}!</Text>
           <Text>{text}</Text>
-          <Button style={button}>Get started</Button>
+          <Button style={button} pY={4} pX={4} href="https://acmecompany.inc/">
+            Get started
+          </Button>
         </Section>
       </Container>
     </Html>
