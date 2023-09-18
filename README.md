@@ -1,6 +1,16 @@
-# Jobs Showcase
+# Trigger.dev Jobs Showcase
 
-This repo contains a set of jobs that can be run locally using the `@trigger.dev/cli` and `@trigger.dev/express` packages. The jobs included in this repo are.
+This repository contains a collection of code-only Jobs that can be run using Trigger.dev. It is a great place to start if you want to see how to use Trigger.dev and our integrations in your own projects.
+
+For full project examples using Trigger.dev, check out our [Examples repo](https://github.com/triggerdotdev/examples).
+
+## About Trigger.dev
+
+Trigger.dev is a framework for creating long-running Jobs directly in your Next.js app with API integrations, webhooks, scheduling and delays. You can reliably run Jobs that wouldn’t normally work in serverless environments (like Vercel) because of timeouts.
+
+## Jobs in this repo:
+
+The Jobs can be run locally using the `@trigger.dev/cli` and `@trigger.dev/express` packages.
 
 | Status | Title                                                                                                                                                          | Description                                                                                                               | Integrations                                                                                                                 | Contributor                                   |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
