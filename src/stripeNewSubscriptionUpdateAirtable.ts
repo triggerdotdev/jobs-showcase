@@ -9,7 +9,6 @@ const stripe = new Stripe({
   apiKey: process.env.STRIPE_API_KEY!,
 });
 
-//this will use the passed in token (defined in your environment variables)
 const airtable = new Airtable({
   id: "airtable",
   token: process.env.AIRTABLE_TOKEN!,
