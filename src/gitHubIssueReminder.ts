@@ -14,8 +14,8 @@ client.defineJob({
   version: "1.0.0",
   trigger: github.triggers.repo({
     event: events.onIssueOpened,
-    owner: "triggerdotdev",
-    repo: "empty",
+    owner: "<your-org-name>",
+    repo: "<your-repo-name>",
   }),
   integrations: {
     github,

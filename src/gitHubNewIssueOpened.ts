@@ -14,8 +14,8 @@ client.defineJob({
   integrations: { github: github },
   trigger: github.triggers.repo({
     event: events.onIssueOpened,
-    owner: "triggerdotdev",
-    repo: "empty",
+    owner: "<your-org-name>",
+    repo: "<your-repo-name>",
   }),
   run: async (payload, io, ctx) => {
     await io.github.addIssueLabels("add label", {

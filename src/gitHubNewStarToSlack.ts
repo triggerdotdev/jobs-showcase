@@ -14,8 +14,8 @@ client.defineJob({
   version: "1.0.0",
   trigger: github.triggers.repo({
     event: events.onStar,
-    owner: "triggerdotdev",
-    repo: "trigger.dev",
+    owner: "<your-org-name>",
+    repo: "<your-repo-name>",
   }),
   integrations: {
     slack,
