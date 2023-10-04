@@ -10,7 +10,7 @@ const linear = new Linear({
 
 client.defineJob({
   id: "linear-new-issue-reply",
-  name: "Linear: New Issue Reply",
+  name: "Linear: automatically reply to new issues",
   version: "1.0.0",
   integrations: {
     linear,
