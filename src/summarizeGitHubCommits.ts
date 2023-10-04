@@ -33,22 +33,9 @@ client.defineJob({
     slack,
   },
   run: async (payload, io, ctx) => {
-    // 1. Calculate the 'since' and 'until' timestamps for yesterday.
-    const timestamps = await io.runTask("get-timestamps", async () => {
-      const today = new Date();
-      today.setUTCHours(0, 0, 0, 0); // Set time to midnight UTC
-
-      const yesterdayEnd = new Date(today);
-      yesterdayEnd.setUTCDate(today.getUTCDate() - 1); // Subtract a day
-      const yesterdayStart = new Date(yesterdayEnd);
-      yesterdayStart.setUTCDate(yesterdayEnd.getUTCDate() - 1); // Subtract another day
-
-      // Convert to ISO format
-      const since = yesterdayStart.toISOString();
-      const until = yesterdayEnd.toISOString();
-
-      return { since, until };
-    });
+    // 1. Get the 'since' and 'until' timestamps
+    const since = payload.lastTimestamp?.toISOString();
+    const until = payload.ts?.toISOString();
 
     // 2. Get yesterday's commits from GitHub
     const owner = "<your-org-name>";
@@ -58,10 +45,10 @@ client.defineJob({
       "get-yesterdays-commits",
       async (client) => {
         return client.rest.repos.listCommits({
-          owner: owner,
-          repo: repo,
-          since: timestamps.since,
-          until: timestamps.until,
+          owner,
+          repo,
+          since,
+          until,
         });
       },
       { name: "Get Yesterday's Commits" }
@@ -69,11 +56,11 @@ client.defineJob({
 
     // 3. Turn the commit data into a shorter format for OpenAI:
     const formattedCommits = await io.runTask("format-commits", async () => {
-      return data.map((commit: any) => {
+      return data.map((commit) => {
         return {
-          author: commit.commit.author.name,
+          author: commit.commit.author?.name,
           message: commit.commit.message,
-          time: commit.commit.author.date,
+          time: commit.commit.author?.date,
           link: commit.html_url,
         };
       });
