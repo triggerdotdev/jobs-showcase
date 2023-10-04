@@ -38,12 +38,12 @@ client.defineJob({
   trigger: stripe.onPaymentIntentSucceeded(),
   run: async (payload, io, ctx) => {
     const customersTable = io.airtable
-      .base("appDxZsujEQXpkCKr")
-      .table<Customers>("Customers");
+      .base("<your base id>")
+      .table<Customers>("<your table name>");
 
     const salesTable = io.airtable
-      .base("appDxZsujEQXpkCKr")
-      .table<Sales>("Sales");
+      .base("<your base id>")
+      .table<Sales>("<your table name>");
 
     const {
       id: payment_intent_id,
