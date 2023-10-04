@@ -25,6 +25,7 @@
     "stripe-on-subscription-created": "node -r dotenv/config -r ts-node/register src/stripeOnSubscriptionCreated.ts",
     "stripe-new-subscription-update-airtable": "node -r dotenv/config -r ts-node/register src/stripeNewSubscriptionUpdateAirtable.ts",
     "supabase-stripe-update-database": "node -r dotenv/config -r ts-node/register src/supabaseStripeUpdateDatabase.ts",
+    "sync-stripe-with-airtable": "node -r dotenv/config -r ts-node/register src/syncStripeWithAirtable.ts",
     "weekly-user-activity-summary": "node -r dotenv/config -r ts-node/register src/weeklyUserActivitySummary.ts",
     "dev:trigger": "trigger-cli dev --port 8080"
   },
