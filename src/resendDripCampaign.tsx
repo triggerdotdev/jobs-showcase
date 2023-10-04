@@ -73,7 +73,6 @@ client.defineJob({
       from: payload.from,
       subject: `Do you have any questions?`,
       text: email3.text,
-      //email 1, triggered by an event
       react: <ThirdEmail name={payload.name} text={email3.text} />,
     });
 
@@ -89,7 +88,6 @@ client.defineJob({
       from: payload.from,
       subject: `How are you getting on with Acme Inc.?`,
       text: email4.text,
-      //email 1, triggered by an event
       react: <MonthLaterEmail name={payload.name} text={email4.text} />,
     });
   },
