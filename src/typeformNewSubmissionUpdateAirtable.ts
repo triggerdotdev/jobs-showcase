@@ -22,7 +22,7 @@ type Submissions = {
   emailContactEnabled: boolean;
 };
 
-// This job populates an Airtable table when a new customer subscription is created in Stripe
+// This job populates an Airtable table when a new submission is created in Typeform
 client.defineJob({
   id: "typeform-new-submission-update-airtable",
   name: "On new Typeform submission update Airtable",
@@ -32,16 +32,15 @@ client.defineJob({
     airtable,
   },
   trigger: typeform.onFormResponse({
-    uid: '<form id>',
-    tag: '<tag>'
+    // to get uid & tag instructions can be found here: https://trigger.dev/docs/integrations/apis/typeform#get-notified-of-new-form-responses
+    uid: '<your-form-id>',
+    tag: '<your-tag>'
   }),
   run: async (payload, io, ctx) => {
-    // Adding the type to table<YourTableType>("<your table name>")
-    // gives you nice type inference and errors.
-    // You can leave it out as well table("<your table name>")
+    // You can get your base-id and table-name from airtable
     const table = io.airtable
-      .base("<base id>")
-      .table<Submissions>("<table name>");
+      .base("<your-base-id>")
+      .table<Submissions>("<your-table-name>");
 
     //create a new record
     const newRecords = await table.createRecords("create records", [
