@@ -32,16 +32,16 @@ client.defineJob({
     airtable,
   },
   trigger: typeform.onFormResponse({
-    uid: 'Y7hopWo6',
-    tag: 'trigger-dev-yashk'
+    uid: '<form id>',
+    tag: '<tag>'
   }),
   run: async (payload, io, ctx) => {
     // Adding the type to table<YourTableType>("<your table name>")
     // gives you nice type inference and errors.
     // You can leave it out as well table("<your table name>")
     const table = io.airtable
-      .base("app7o6XFfZRvXz49Y")
-      .table<Submissions>("Typeform Responses");
+      .base("<base id>")
+      .table<Submissions>("<table name>");
 
     //create a new record
     const newRecords = await table.createRecords("create records", [
