@@ -20,7 +20,7 @@ const slack = new Slack({ id: "slack" });
 // This Job runs at 7am every day using a cron schedule expression.
 client.defineJob({
   id: "summarize-yesterday-commits-on-slack",
-  name: "Summarize yesterday's commits on Slack",
+  name: "Summarize yesterdays GitHub commits on Slack",
   version: "1.0.0",
   trigger: cronTrigger({
     // Note that the time is in UTC.
@@ -74,11 +74,17 @@ client.defineJob({
         messages: [
           {
             role: "system",
-            content: `You are a expert programmer experienced in GitHub. You are to concisely summarize the GitHub commits in one message. Reply with a heading message -- 'GitHub Commits for ${repo} yesterday' -- followed by a summary of the commits. Use bullet points in your summary list and use appropriate spacing for maximum readability.`,
+            content: `You are a expert programmer experienced in GitHub. 
+            You are to concisely summarize the GitHub commits in one message. 
+            Reply with a heading message -- 'GitHub Commits for ${repo} yesterday' 
+            -- followed by a summary of the commits. Use bullet points in your summary 
+            list and use appropriate spacing for maximum readability.`,
           },
           {
             role: "user",
-            content: `Here are all of the GitHub commits from yesterday (delimited by triple quotes below). Please summarize them like "{user} {message} ({url})".\n\n"""${JSON.stringify(
+            content: `Here are all of the GitHub commits from yesterday 
+            (delimited by triple quotes below). Please summarize them like 
+            "{user} {message} ({url})".\n\n"""${JSON.stringify(
               formattedCommits,
               null,
               2
