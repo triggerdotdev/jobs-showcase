@@ -15,7 +15,7 @@ const airtable = new Airtable({
 });
 
 //this is the type definition for the table
-type Submissions = {
+type Submission = {
   id: string;
   name: string;
   email: string;
@@ -40,19 +40,32 @@ client.defineJob({
     // You can get your base-id and table-name from airtable
     const table = io.airtable
       .base("<your-base-id>")
-      .table<Submissions>("<your-table-name>");
+      .table<Submission>("<your-table-name>");
+
+    if (payload.form_response.answers[0].type !== "text") {
+      throw new Error("The first answer is not a name");
+    }
+    const name = payload.form_response.answers[0].text;
+
+    if (payload.form_response.answers[1].type !== "email") {
+      throw new Error("The second answer is not an email");
+    }
+    const email = payload.form_response.answers[1].email;
+
+
+    if (payload.form_response.answers[2].type !== "choice") {
+      throw new Error("The third answer is not a choice");
+    }
+    const emailContactEnabled = payload.form_response.answers[2].choice.label === "Yes";
 
     //create a new record
     const newRecords = await table.createRecords("create records", [
       {
         fields: {
           id: payload.event_id,
-          // @ts-ignore
-          name: payload.form_response.answers[0]?.text ?? '',
-          // @ts-ignore
-          email: payload.form_response.answers[1].email ?? '',
-          // @ts-ignore
-          emailContactEnabled: payload.form_response.answers[2].choice.label === "Yes" ? true : false
+          name,
+          email,
+          emailContactEnabled
         },
       },
     ]);
