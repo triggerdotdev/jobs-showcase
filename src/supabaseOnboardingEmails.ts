@@ -11,8 +11,8 @@ const supabaseManagement = new SupabaseManagement({
 });
 
 const db = supabaseManagement.db<Database>(
-  // process.env.NEXT_PUBLIC_SUPABASE_URL! // Use the SUPABASE_URL if using standard Supabase domain
-  process.env.SUPABASE_REFERENCE_ID! // use a reference ID if using a Supabase cusom domain
+  // process.env.NEXT_PUBLIC_SUPABASE_URL! // Use if using standard Supabase domain
+  process.env.SUPABASE_REFERENCE_ID! // Use if using a Supabase custom domain
 );
 
 const resend = new Resend({
