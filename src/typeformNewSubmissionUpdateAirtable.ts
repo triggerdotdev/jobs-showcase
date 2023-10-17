@@ -32,9 +32,10 @@ client.defineJob({
     airtable,
   },
   trigger: typeform.onFormResponse({
-    // to get uid & tag instructions can be found here: https://trigger.dev/docs/integrations/apis/typeform#get-notified-of-new-form-responses
-    uid: '<your-form-id>',
-    tag: '<your-tag>'
+    // to get uid & tag instructions can be found here:
+    // https://trigger.dev/docs/integrations/apis/typeform#get-notified-of-new-form-responses
+    uid: "<your-form-id>",
+    tag: "<your-tag>",
   }),
   run: async (payload, io, ctx) => {
     // You can get your base-id and table-name from airtable
@@ -52,11 +53,11 @@ client.defineJob({
     }
     const email = payload.form_response.answers[1].email;
 
-
     if (payload.form_response.answers[2].type !== "choice") {
       throw new Error("The third answer is not a choice");
     }
-    const emailContactEnabled = payload.form_response.answers[2].choice.label === "Yes";
+    const emailContactEnabled =
+      payload.form_response.answers[2].choice.label === "Yes";
 
     //create a new record
     const newRecords = await table.createRecords("create records", [
@@ -65,12 +66,15 @@ client.defineJob({
           id: payload.event_id,
           name,
           email,
-          emailContactEnabled
+          emailContactEnabled,
         },
       },
     ]);
 
-    await io.logger.info("A new form submission was created.", { payload, newRecords });
+    await io.logger.info("A new form submission was created.", {
+      payload,
+      newRecords,
+    });
   },
 });
 
