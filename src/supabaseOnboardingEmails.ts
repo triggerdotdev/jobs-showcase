@@ -7,7 +7,7 @@ const client = new TriggerClient({ id: "jobs-showcase" });
 
 // Use OAuth to authenticate with Supabase Management API
 const supabaseManagement = new SupabaseManagement({
-  id: "supabase-management-jobs-showcase",
+  id: "supabase-management",
 });
 
 const db = supabaseManagement.db<Database>(
