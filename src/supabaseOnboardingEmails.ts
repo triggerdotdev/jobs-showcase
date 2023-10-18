@@ -20,12 +20,15 @@ const resend = new Resend({
   apiKey: process.env.RESEND_API_KEY!,
 });
 
+// This job triggers when a Supabase user confirms their email address
 client.defineJob({
   id: "welcome-email-campaign",
   name: "Welcome Email Campaign",
   version: "1.0.0",
   trigger: db.onUpdated({
-    // Trigger this job whenever a user is confirmed
+    // This job triggers when there is an update in the 'users' table of the 'auth' schema.
+    // Specifically, it watches for a change in the 'email_confirmed_at' field from null (unconfirmed email)
+    // to a timestamp (confirmed email).
     schema: "auth",
     table: "users",
     filter: {
@@ -48,7 +51,7 @@ client.defineJob({
     const isTestOrDev =
       ctx.run.isTest || ctx.environment.type === "DEVELOPMENT";
 
-    // Only wait for 10 seconds when running in as a test or in the development environment
+    // Only wait for 10 seconds when running as a test or in the development environment
     await io.wait("wait-1", isTestOrDev ? 10 : 60 * 60); // 1 hour
 
     const email1 = await io.resend.sendEmail("email-1", {
