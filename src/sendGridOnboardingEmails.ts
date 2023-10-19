@@ -9,7 +9,28 @@ const sendgrid = new SendGrid({
   apiKey: process.env.SENDGRID_API_KEY!,
 });
 
-// This job sends a 4-email drip campaign using SendGrid
+/**
+ * This job handles a 4-step onboarding email sequence using SendGrid.
+ *
+ * Trigger Mechanism:
+ * - The job is triggered by an `eventTrigger` named "sendgrid.onboarding.email.campaign".
+ * - To manually trigger this job, follow the steps in the Trigger.dev documentation:
+ *   https://trigger.dev/docs/documentation/concepts/triggers/events#sending-events
+ *
+ * Payload Schema:
+ * - 'to': The recipient's email address. Must be a valid email.
+ * - 'from': The sender's email address. Must be a valid email and a verified domain in your SendGrid account.
+ * - 'name': (Optional) The name of the recipient.
+ * - 'subject': The subject line for the email.
+ * - 'text': The text content of the email.
+ *
+ * Job Flow:
+ * 1. Immediately sends a welcome email after the event trigger.
+ * 2. Sends a tips email 24 hours later.
+ * 3. Sends a follow-up email 5 days later.
+ * 4. Sends a check-in email 30 days later.
+ *
+ */
 client.defineJob({
   id: "sendgrid-onboarding-email-campaign",
   name: "SendGrid Onboarding Email Campaign",
@@ -18,7 +39,6 @@ client.defineJob({
     name: "sendgrid.onboarding.email.campaign",
     schema: z.object({
       to: z.string().email(),
-      // The 'from' email address must be a verified domain in your SendGrid account.
       from: z.string().email(),
       name: z.string().optional(),
       subject: z.string(),
@@ -32,7 +52,7 @@ client.defineJob({
     const name = payload.name || "there";
 
     // Send the first email immediately on an eventTrigger
-    const email1 = await io.sendgrid.sendEmail("email-1", {
+    const email1 = await io.sendgrid.sendEmail("send-email-1-immediately", {
       to: payload.to,
       subject: `Thanks for joining Acme Inc`,
       text: `Hi ${name}, welcome to our community! This is the first email we send you to help you get started.`,
