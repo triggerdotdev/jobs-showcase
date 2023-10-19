@@ -14,7 +14,8 @@ const sendgrid = new SendGrid({
  *
  * Trigger Mechanism:
  * - The job is triggered by an `eventTrigger` named "sendgrid.onboarding.email.campaign".
- * - To manually trigger this job, follow the steps in the Trigger.dev documentation:
+ * - Events can be sent either from your own code using `client.sendEvent()` or from another job using `io.sendEvent()`.
+ *   For further details, refer to the Trigger.dev documentation:
  *   https://trigger.dev/docs/documentation/concepts/triggers/events#sending-events
  *
  * Payload Schema:
