@@ -2,7 +2,9 @@ import { TriggerClient, eventTrigger } from "@trigger.dev/sdk";
 import { OpenAI } from "@trigger.dev/openai";
 import { z } from "zod";
 
+// hide-code
 const client = new TriggerClient({ id: "jobs-showcase" });
+// end-hide-code
 
 const openai = new OpenAI({
   id: "openai",
@@ -49,6 +51,8 @@ client.defineJob({
   },
 });
 
+// hide-code
 // These lines can be removed if you don't want to use express
 import { createExpressServer } from "@trigger.dev/express";
 createExpressServer(client);
+// end-hide-code

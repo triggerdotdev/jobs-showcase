@@ -1,5 +1,3 @@
-// src/resendSendReactEmail.tsx
-
 import { TriggerClient, eventTrigger } from "@trigger.dev/sdk";
 import { Resend } from "@trigger.dev/resend";
 import { z } from "zod";
@@ -13,7 +11,9 @@ import { Section } from "@react-email/section";
 import { Preview } from "@react-email/preview";
 import { Container } from "@react-email/container";
 
+// hide-code
 const client = new TriggerClient({ id: "jobs-showcase" });
+// end-hide-code
 
 const resend = new Resend({
   id: "resend",
@@ -103,6 +103,8 @@ client.defineJob({
   },
 });
 
+// hide-code
 // These lines can be removed if you don't want to use express
 import { createExpressServer } from "@trigger.dev/express";
 createExpressServer(client);
+// end-hide-code

@@ -1,6 +1,11 @@
 import { TriggerClient, cronTrigger } from "@trigger.dev/sdk";
 import { Linear } from "@trigger.dev/linear";
 import { Slack } from "@trigger.dev/slack";
+import { get } from "http";
+
+// hide-code
+const client = new TriggerClient({ id: "jobs-showcase" });
+// end-hide-code
 
 const linear = new Linear({
   id: "linear",
@@ -8,8 +13,6 @@ const linear = new Linear({
 });
 
 const slack = new Slack({ id: "slack" });
-
-const client = new TriggerClient({ id: "jobs-showcase" });
 
 client.defineJob({
   id: "linear-issues-daily-slack-alert",
@@ -81,7 +84,8 @@ client.defineJob({
   },
 });
 
+// hide-code
 // These lines can be removed if you don't want to use express
 import { createExpressServer } from "@trigger.dev/express";
-import { get } from "http";
 createExpressServer(client);
+// end-hide-code

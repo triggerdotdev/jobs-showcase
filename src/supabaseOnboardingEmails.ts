@@ -3,7 +3,9 @@ import { Database } from "./mocks/supabase-types";
 import { Resend } from "@trigger.dev/resend";
 import { TriggerClient } from "@trigger.dev/sdk";
 
+// hide-code
 const client = new TriggerClient({ id: "jobs-showcase" });
+// end-hide-code
 
 // Use OAuth to authenticate with Supabase Management API
 const supabaseManagement = new SupabaseManagement({
@@ -87,6 +89,8 @@ client.defineJob({
   },
 });
 
+// hide-code
 // These lines can be removed if you don't want to use express
 import { createExpressServer } from "@trigger.dev/express";
 createExpressServer(client);
+// end-hide-code

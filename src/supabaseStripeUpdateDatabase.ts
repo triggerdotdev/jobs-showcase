@@ -2,7 +2,9 @@ import { SupabaseManagement, Supabase } from "@trigger.dev/supabase";
 import { Stripe } from "@trigger.dev/stripe";
 import { TriggerClient } from "@trigger.dev/sdk";
 
+// hide-code
 const client = new TriggerClient({ id: "jobs-showcase" });
+// end-hide-code
 
 export const stripe = new Stripe({
   id: "stripe",
@@ -54,6 +56,8 @@ client.defineJob({
   },
 });
 
+// hide-code
 // These lines can be removed if you don't want to use express
 import { createExpressServer } from "@trigger.dev/express";
 createExpressServer(client);
+// end-hide-code
