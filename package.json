@@ -25,6 +25,7 @@
     "stripe-on-subscription-created": "node -r dotenv/config -r ts-node/register src/stripeOnSubscriptionCreated.ts",
     "stripe-new-subscription-update-airtable": "node -r dotenv/config -r ts-node/register src/stripeNewSubscriptionUpdateAirtable.ts",
     "summarize-github-commits": "node -r dotenv/config -r ts-node/register src/summarizeGitHubCommits.ts",
+    "supabase-generate-blog-title": "node -r dotenv/config -r ts-node/register src/supabaseGenerateBlogTitle.ts",
     "supabase-onboarding-emails": "node -r dotenv/config -r ts-node/register src/supabaseOnboardingEmails.ts",
     "supabase-new-image-uploads": "node -r dotenv/config -r ts-node/register src/supabaseNewImageUploads.ts",
     "supabase-stripe-update-database": "node -r dotenv/config -r ts-node/register src/supabaseStripeUpdateDatabase.ts",
