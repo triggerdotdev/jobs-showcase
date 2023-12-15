@@ -20,6 +20,7 @@
     "resend-send-react-email": "node -r dotenv/config -r ts-node/register src/resendSendReactEmail.tsx",
     "resend-drip-campaign": "node -r dotenv/config -r ts-node/register src/resendDripCampaign.tsx",
     "scheduled-interval-basic": "node -r dotenv/config -r ts-node/register src/scheduledIntervalBasic.ts",
+    "sendgrid-onboarding-emails": "node -r dotenv/config -r ts-node/register src/sendGridOnboardingEmails.ts",
     "sendgrid-send-basic-email": "node -r dotenv/config -r ts-node/register src/sendGridEmail.ts",
     "slack-post-message": "node -r dotenv/config -r ts-node/register src/slackPostMessage.ts",
     "stripe-on-subscription-created": "node -r dotenv/config -r ts-node/register src/stripeOnSubscriptionCreated.ts",
